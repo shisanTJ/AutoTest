@@ -1,0 +1,76 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1578736294362" stop="1578736335657">
+  <name>scripts</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1578736294362" status="failed" stop="1578736335657">
+      <name>test06_app_article.TestAppArticle.test_app_article</name>
+      <failure>
+        <message>Exception: 异常,没找到,最后一行了</message>
+        <stack-trace>self = &lt;scripts.test06_app_article.TestAppArticle object at 0x04642330&gt;
+
+    def test_app_article(self):
+    
+&gt;       self.article.page_app_article(find_text='python',title_text="python")
+
+scripts\test06_app_article.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page\page_app_article.py:19: in page_app_article
+    self.page_find_article(title_text)
+page\page_app_article.py:14: in page_find_article
+    self.base_down_up(page.app_article,title_text)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;page.page_app_article.PageAppArticle object at 0x046233D0&gt;, area_loc = ('xpath', "//*[@bounds ='[0,260][720,1144]']")
+find_text = 'python'
+
+    def base_down_up(self,area_loc,find_text):
+        # 获取区域元素
+        el = self.base_find(area_loc)
+    
+        # 获取元素宽高
+        size = el.size
+        width = size["width"]
+        height = size["height"]
+        # 计算开始坐标结束坐标
+        start_x = width * 0.5
+        start_y =height * 0.85
+        end_x = width * 0.5
+        end_y = height * 0.15
+        # 组合find_text包含的元素定位信息
+        loc = By.XPATH, "//*[@bounds ='[0,260][720,1144]']//*[contains(@text,'{}')]".format(find_text)
+    
+        # 获取当前页面结构
+        page_source = self.driver.page_source
+        while True:
+            try:
+                print("正在查找文章")
+                el = self.base_find(loc, timeout=2)
+                print("找到文章了:{}".format(el.text))
+                el.click()
+                break
+            except:
+                print("没找到")
+                # 滑动屏幕
+                self.driver.swipe(start_x, start_y, end_x, end_y, 2000)
+            if page_source == self.driver.page_source:
+                print("不能✿了啊")
+&gt;               raise Exception("异常,没找到,最后一行了")
+E               Exception: 异常,没找到,最后一行了
+
+base\app_base.py:76: Exception</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="02de4ec3-c684-464b-a63d-ea9edf00d972-attachment.txt" title="Captured log setup" type="text/plain"/>
+        <attachment source="bd467062-9cf0-4884-977a-a3fcce0f2796-attachment.txt" title="Captured log call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8940-MainThread"/>
+        <label name="host" value="DESKTOP-S4COQLI"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
