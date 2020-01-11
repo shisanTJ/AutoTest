@@ -1,0 +1,22 @@
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('xpath', "//*[text()='内容管理']")
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('xpath', "//*[contains(text(),'发布文章')]")
+base.py                     16 INFO     正在查找元素:('css selector', "[placeholder='文章名称']")
+base.py                     31 INFO     正在清空输入框
+base.py                     34 INFO     正在输入:2020tj
+base.py                     16 INFO     正在查找元素:('css selector', '#publishTinymce_ifr')
+base.py                     16 INFO     正在查找元素:('css selector', '#tinymce')
+base.py                     31 INFO     正在清空输入框
+base.py                     34 INFO     正在输入:阳光正好,微风不燥
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('xpath', "//*[text()='自动']")
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('css selector', "[placeholder='请选择']")
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('xpath', "//*[text()='数据库']")
+base.py                     39 INFO     正在点击操作
+base.py                     16 INFO     正在查找元素:('css selector', '.el-button.filter-item.el-button--primary')
+base.py                     16 INFO     正在查找元素:('xpath', "//*[contains(text(),'成功')]")
+base.py                     44 INFO     正在获取文本:新增文章成功
+base.py                     16 INFO     正在查找元素:('xpath', "//*[contains(text(),'成功')]")
